@@ -1,24 +1,50 @@
-# README
+# Hello rails react
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this exercise I created an app that shows greetings radomly using Webpack with jsbundling-rails gem.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Visual Studio Code and GitHub.
+- Ruby on Rails.
+- React & Redux.
+- Linters for RoR.
+- Gitflow.
+- Webpack.
 
-* System dependencies
+## Instalation
 
-* Configuration
+- [Clone repository](git@github.com:franclobo/hello-rails-react.git)
 
-* Database creation
+- bundle install
 
-* Database initialization
+- rails db:create db:migrate db:seed
 
-* How to run the test suite
+- ./bin/dev
 
-* Services (job queues, cache servers, search engines, etc.)
+## Author
 
-* Deployment instructions
+## 👤 Francisco Borja
 
-* ...
+- GitHub: [@franclobo](https://github.com/franclobo)
+
+- Twitter: [@pancho2788](https://twitter.com/Pancho2788)
+
+- LinkedIn: [Francisco Borja](https://www.linkedin.com/in/francisco-borja-lobato/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
