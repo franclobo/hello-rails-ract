@@ -1,14 +1,12 @@
-import { applyMiddleware, combineReducers, legacy_createStore as createStore } from "redux";
-import thunk from "redux-thunk";
-import greetingReducer from "./greetings/greetings";
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+import greetingReducer from './greetings/greetings';
 
-const reducer = combineReducers({
-  greetingReducer
+const rootReducer = combineReducers({
+  greetings: greetingReducer,
 });
 
-const store = createStore(
-  reducer,
-  applyMiddleware(thunk),
-);
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 export default store;
