@@ -1,10 +1,11 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  namespace :api, defaults: { format: :json } do
-    resources :greetings, only: [:index]
+  namespace :api do
+    namespace :v1, defaults: { format: :json } do
+      resources :greetings, only: %i[ index ]
+    end
   end
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
   # Defines the root path route ("/")
   root "greetings#index"
 end

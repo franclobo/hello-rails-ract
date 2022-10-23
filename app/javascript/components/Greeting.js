@@ -1,25 +1,18 @@
-import React, { useEffect } from "react"
-import PropTypes from "prop-types"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchGreeting } from "../redux/greetings/greetings";
+import PropTypes from 'prop-types';
 
-function Greeting() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchGreeting());
-  },[]);
-
-  const message = useSelector(state => state.greetingReducer);
+function Greeting(props) {
+  const { id, message } = props;
 
   return (
-    <React.Fragment>
-      {message.message}
-    </React.Fragment> 
+    <div id={id}>
+      <h1>{message}</h1>
+    </div>
   );
 }
 
 Greeting.propTypes = {
-  message: PropTypes.string
+  id: PropTypes.number.isRequired,
+  message: PropTypes.string.isRequired,
 };
-export default Greeting
+
+export default Greeting;

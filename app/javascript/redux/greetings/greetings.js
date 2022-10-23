@@ -1,28 +1,25 @@
-const initState = {
-  message: " "
-};
-const FETCH_GREETING = "FETCH_GREETING";
+const url = 'http://localhost:3000/api/v1/greetings';
+const GETMESSAGES = 'greetings/GETMESSAGES';
 
-const url = "http://localhost:3000/api/greetings";
-
-const greetingReducer = (state = initState, action) => {
+function greetingReducer(state = [], action) {
   switch (action.type) {
-    case FETCH_GREETING:
-      return action.payload;
+    case GETMESSAGES:
+      return [...action.greetings];
     default:
       return state;
   }
-};
+}
 
-export const fetchGreeting = () => async dispatch => {
-  await fetch(url)
-    .then(res => res.json())
-    .then(data =>  {     
-      dispatch({ type: FETCH_GREETING, payload: 
-        {
-          message: data.message
-        }
-       });
+const getMessages = (greetings) => ({
+  type: GETMESSAGES,
+  greetings,
+});
+
+export const fetchGreeting = () => (dispatch) => {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      dispatch(getMessages(data));
     });
 };
 
